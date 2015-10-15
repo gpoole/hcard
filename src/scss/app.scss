@@ -1,1 +1,15 @@
 @import "bootstrap";
+
+@media (min-width: $screen-md-min) {
+	.input-set {
+		margin-left: -$grid-gutter-width;
+		overflow: hidden;
+	}
+
+	.short-input {
+		float: left;
+		width: 50%;
+		padding-left: $grid-gutter-width;
+		box-sizing: border-box;
+	}
+}
