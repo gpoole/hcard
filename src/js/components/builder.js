@@ -14,9 +14,14 @@ export class Builder extends React.Component {
 	}
 
 	render() {
-		return <div>
-				<Editor onChanged={this.handleChanged.bind(this)} />
-				<Card givenName={this.state.givenName} surname={this.state.surname} />
+		return <div className="row">
+				<div className="col-md-6">
+					<Editor onChanged={this.handleChanged.bind(this)} />
+				</div>
+				<div className="col-md-6">
+					<h2 className="card-preview-title">hCard Preview</h2>
+					<Card {...this.state} />
+				</div>
 			</div>;
 	}
 

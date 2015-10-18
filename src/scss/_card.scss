@@ -1,0 +1,51 @@
+$card-padding: 20px;
+$card-label-width: 80px;
+
+.card {
+	background-color: white;	
+}
+
+.card-headline {
+	background-color: $brand-primary;
+	color: white;
+	padding: $card-padding;
+	position: relative;
+	min-height: 100px;
+
+	.card-photo {
+		position: absolute;
+		top: $card-padding / 2;
+		right: $card-padding / 2;
+	}
+
+	.card-title {
+		color: white;
+		font-size: $font-size-h2;
+		position: absolute;
+		bottom: $card-padding;
+		left: $card-padding;
+	}
+}
+
+.card-body {
+	padding: $card-padding;
+}
+
+.card-line {
+	@include clearfix;
+
+	.card-label {
+		float: left;
+		text-transform: uppercase;
+		width: $card-label-width;
+	}
+
+	.card-field {
+		display: block;
+		margin-left: $card-label-width;
+	}
+
+	&.short-field {
+		
+	}
+}

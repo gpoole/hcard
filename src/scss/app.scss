@@ -1,15 +1,27 @@
+@import "variables";
 @import "bootstrap";
 
-@media (min-width: $screen-md-min) {
-	.input-set {
-		margin-left: -$grid-gutter-width;
-		overflow: hidden;
-	}
+@import url(https://fonts.googleapis.com/css?family=Merriweather:400,700|Merriweather+Sans:400,700);
 
-	.short-input {
-		float: left;
+@import "common";
+@import "form";
+@import "card";
+
+.hc-app {
+	&:before {
+		content: " ";
+		position: absolute;
+		left: 50%;
+		top: 0;
 		width: 50%;
-		padding-left: $grid-gutter-width;
-		box-sizing: border-box;
+		height: 100%;
+		background-color: $gray-lighter;
 	}
+}
+
+.card-preview-title {
+	text-transform: uppercase;
+	color: $gray-light;
+	font-size: $font-size-large;
+	font-weight: normal;
 }

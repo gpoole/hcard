@@ -1,0 +1,34 @@
+.control-label {
+	@extend .field-label;
+	font-weight: normal;
+	text-transform: uppercase;
+	color: $brand-primary;
+	font-size: $font-size-base;
+}
+
+legend {
+	font-size: $font-size-small;
+	text-transform: uppercase;
+}
+
+fieldset {
+	margin-top: $form-group-margin-bottom * 2;
+}
+
+.form-control {
+	font-family: $font-family-serif;
+}
+
+@media (min-width: $screen-md-min) {
+	.input-set {
+		margin-left: -$grid-gutter-width;
+		overflow: hidden;
+	}
+
+	.short-input {
+		float: left;
+		width: 50%;
+		padding-left: $grid-gutter-width;
+		box-sizing: border-box;
+	}
+}
