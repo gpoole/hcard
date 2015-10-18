@@ -57,5 +57,5 @@ grunt build
 If you are actively developing the project, you can use the provided `watch` task, which will run a webserver at http://localhost:8000 and will watch for changes, recompile and automatically refresh your browser:
 
 ```
-grunt watch
+grunt serve
 ```

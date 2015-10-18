@@ -23,6 +23,18 @@ fieldset {
 	float: right;
 }
 
+.btn {
+	font-size: $font-size-large;
+}
+
+.btn-primary {
+	border-bottom: 2px solid darken($btn-primary-bg, 10%);
+}
+
+.btn-default {
+	border-bottom: 2px solid darken($btn-default-bg, 10%);
+}
+
 @media (min-width: $screen-md-min) {
 	.input-set {
 		margin-left: -$grid-gutter-width;

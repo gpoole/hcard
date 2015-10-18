@@ -25,7 +25,6 @@ export class Editor extends React.Component {
 	render() {
 		return (
 			<form>
-				<h2>hCard Builder</h2>
 				<fieldset>
 					<legend>Personal details</legend>
 					<div className="input-set">

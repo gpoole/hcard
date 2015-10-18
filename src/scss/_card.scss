@@ -3,6 +3,7 @@ $card-label-width: 80px;
 
 .card {
 	background-color: white;
+	border-bottom: 2px solid $gray;
 }
 
 .card-headline {
@@ -31,6 +32,7 @@ $card-label-width: 80px;
 		position: absolute;
 		bottom: $card-padding;
 		left: $card-padding;
+		font-family: $font-family-serif;
 	}
 }
 

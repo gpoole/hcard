@@ -18,7 +18,9 @@ export class Builder extends React.Component {
 	}
 
 	render() {
-		return <div className="row">
+		return <div>
+			<h1>hCard Builder</h1>
+			<div className="row">
 				<div className="col-md-6 app-editor">
 					<Editor onChange={this.handleChanged.bind(this)} {...this.state} />
 				</div>
@@ -26,7 +28,8 @@ export class Builder extends React.Component {
 					<h2 className="card-preview-title">hCard Preview</h2>
 					<Card {...this.state} />
 				</div>
-			</div>;
+			</div>
+		</div>;
 	}
 
 }
