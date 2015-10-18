@@ -28,9 +28,19 @@ module.exports = function (grunt) {
 		},
 		watch: {
 			files: [ 'src/**/*', 'index.html' ],
-			tasks: [ 'sass', 'babel' ],
+			tasks: [ 'sass', 'babel', 'copy' ],
 			options: {
 				livereload: true
+			}
+		},
+		copy: {
+			dist: {
+				files: [{
+					expand: true,
+					dest: 'dist/',
+					cwd: 'src',
+					src: 'img/**/*'
+				}]
 			}
 		},
 		connect: {
@@ -45,12 +55,14 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-sass');
 	grunt.loadNpmTasks('grunt-babel');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-connect');
 
 	// Default task(s).
 	grunt.registerTask('default', [
 		'sass',
-		'babel'
+		'copy',
+		'babel',
 	]);
 
 	grunt.registerTask('serve', [

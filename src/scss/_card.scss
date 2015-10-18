@@ -16,6 +16,13 @@ $card-label-width: 80px;
 		position: absolute;
 		top: $card-padding / 2;
 		right: $card-padding / 2;
+		max-width: 85px;
+
+		&.card-photo-empty {
+			background: $gray-lighter no-repeat url(../img/avatar.png) center center;
+			width: 85px;
+			height: 100px;
+		}
 	}
 
 	.card-title {

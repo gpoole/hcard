@@ -6,7 +6,13 @@ export class Card extends React.Component {
 		return <div className="vcard card">
 			<div className="card-headline">
 				<span className="fn card-title">{this.props.givenName} {this.props.surname}</span>
-				<img src={this.props.image} className="photo card-photo" />
+				{(() => {
+					if(this.props.image) {
+						return <img src={this.props.image} className="photo card-photo" />;
+					} else {
+						return <div className="card-photo card-photo-empty"></div>;
+					}
+				})()}
 			</div>
 			<div className="card-body">
 				<span className="card-line">
