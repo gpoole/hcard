@@ -5,26 +5,27 @@ export class TextField extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			value: props.value || "",
 			changed: !!props.value
 		};
 	}
 
 	isValid() {
-		if(!this.state.value) {
+		if(!this.props.value) {
 			return false;
 		}
 		if(this.props.pattern) {
-			return this.state.value.match(this.props.pattern);
+			return this.props.value.match(this.props.pattern);
 		}
 		return true;
 	}
 
 	handleChange(event) {
 		this.setState({
-			value: event.target.value,
 			changed: true
 		});
+		if(typeof this.props.onChanged == "function") {
+			this.props.onChanged(this, this.props.name, event.target.value);
+		}
 	}
 
 	render() {
@@ -38,7 +39,7 @@ export class TextField extends React.Component {
 		return (
 			<div className={className}>
 				<label className="control-label" htmlFor={this.props.name}>{this.props.label}</label>
-				<input className="form-control" type="text"  name={this.props.name} placeholder={this.props.placeholder} onChange={this.handleChange.bind(this)} />
+				<input className="form-control" type="text" value={this.props.value} name={this.props.name} placeholder={this.props.placeholder} onChange={this.handleChange.bind(this)} />
 			</div>
 		);
 	}

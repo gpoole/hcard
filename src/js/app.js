@@ -1,4 +1,4 @@
-import { Editor } from "./components/editor";
+import { Builder } from "./components/builder";
 import React from "react";
 
-React.render(React.createElement(Editor), document.querySelector('.hc-app'));
+React.render(React.createElement(Builder), document.querySelector('.hc-app'));
