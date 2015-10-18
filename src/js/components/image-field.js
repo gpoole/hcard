@@ -1,6 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+/**
+ * Provides a button which the user can click to select a single image file. When a valid file is selected,
+ * the component will call onImageChange prop and provide a valid URL for the image.
+ */
 export class ImageField extends React.Component {
 
 	fileChanged(event) {
@@ -22,6 +26,8 @@ export class ImageField extends React.Component {
 	}
 
 	selectFile(event) {
+		// We're faking out having a button do this by triggering a virtual click on a hidden file input, which will
+		// do the actual work for this component.
 		event.preventDefault();
 		let input = ReactDOM.findDOMNode(this).querySelector("input[type=file]");
 		input.click();
@@ -29,7 +35,7 @@ export class ImageField extends React.Component {
 
 	render() {
 		return <span>
-			<input type="file" onChange={this.fileChanged.bind(this)} style={{display: "none"}}/>
+			<input type="file" onChange={this.fileChanged.bind(this)} style={{display: "none"}} accept="image/*"/>
 			<button onClick={this.selectFile.bind(this)} className={this.props.className}>{this.props.children}</button>
 		</span>;
 	}

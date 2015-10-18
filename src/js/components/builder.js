@@ -2,6 +2,10 @@ import { Editor } from "./editor";
 import { Card } from "./card";
 import React from "react";
 
+/**
+ * Builder is the main application component and is responsible for managing the editor and card preview components.
+ * All properties are retained here and passed down to the descendant components.
+ */
 export class Builder extends React.Component {
 
 	constructor(props) {

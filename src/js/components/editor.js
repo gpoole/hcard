@@ -2,15 +2,21 @@ import { TextField } from './text-field';
 import { ImageField } from './image-field';
 import React from 'react';
 
+/**
+ * Component to manage the editable fields of the hCard and pass changes to the main Builder component.
+ */
 export class Editor extends React.Component {
 
 	handleChanged(field, name, value) {
+		// We dont' actually do anything when properties change other than pass the change on to the parent.
+		// We expect the parent to handle the change however it wants and then tell us to update.
 		if(typeof this.props.onChange == "function") {
 			this.props.onChange(name, value);
 		}
 	}
 
 	handleImageSelected(field, url) {
+		// As with handleChanged (see above)
 		if(typeof this.props.onChange == "function") {
 			this.props.onChange("image", url);
 		}

@@ -12,6 +12,7 @@
 }
 
 @media (min-width: $screen-md-min) {
+	// Trick to get a grey box to the edge beind the "preview" half of the screen
 	.hc-app {
 		&:before {
 			content: " ";

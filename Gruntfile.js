@@ -44,9 +44,14 @@ module.exports = function (grunt) {
 			}
 		},
 		connect: {
-			server: {
+			watch: {
 				options: {
 					livereload: true
+				}
+			},
+			preview: {
+				options: {
+					keepalive: true
 				}
 			}
 		},
@@ -70,8 +75,12 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks("grunt-systemjs-builder");
 
-	// Default task(s).
 	grunt.registerTask('default', [
+		'build',
+		'connect:preview'
+	]);
+
+	grunt.registerTask('build', [
 		'sass',
 		'copy',
 		'babel',
@@ -79,7 +88,7 @@ module.exports = function (grunt) {
 	]);
 
 	grunt.registerTask('serve', [
-		'connect',
+		'connect:watch',
 		'watch'
 	]);
 

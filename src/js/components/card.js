@@ -1,5 +1,8 @@
 import React from "react";
 
+/**
+ * Represents a contact card, in hCard-compatible microformat markup (http://microformats.org/wiki/hCard).
+ */
 export class Card extends React.Component {
 
 	render() {
