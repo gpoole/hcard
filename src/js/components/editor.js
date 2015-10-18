@@ -1,11 +1,18 @@
 import { TextField } from './text-field';
+import { ImageField } from './image-field';
 import React from 'react';
 
 export class Editor extends React.Component {
 
 	handleChanged(field, name, value) {
-		if(typeof this.props.onChanged == "function") {
-			this.props.onChanged(name, value);
+		if(typeof this.props.onChange == "function") {
+			this.props.onChange(name, value);
+		}
+	}
+
+	handleImageSelected(field, url) {
+		if(typeof this.props.onChange == "function") {
+			this.props.onChange("image", url);
 		}
 	}
 
@@ -33,7 +40,7 @@ export class Editor extends React.Component {
 						<TextField name="country" value={this.props.country} onChanged={this.handleChanged.bind(this)} placeholder="Country" label="Country" className="short-input" />
 					</div>
 				</fieldset>
-				<button className="btn btn-default">Upload avatar</button>
+				<ImageField className="btn btn-default" onImageChange={this.handleImageSelected.bind(this)}>Upload avatar</ImageField>
 				<button className="btn btn-primary">Create hCard</button>
 			</form>
 		);

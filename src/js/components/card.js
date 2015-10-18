@@ -6,7 +6,7 @@ export class Card extends React.Component {
 		return <div className="vcard card">
 			<div className="card-headline">
 				<span className="fn card-title">{this.props.givenName} {this.props.surname}</span>
-				<img src="http://www.placecage.com/140/100" className="photo card-photo" />
+				<img src={this.props.image} className="photo card-photo" />
 			</div>
 			<div className="card-body">
 				<span className="card-line">

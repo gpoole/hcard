@@ -12,6 +12,7 @@
     "directories": {},
     "dependencies": {
       "react": "npm:react@^0.14.0",
+      "react-dom": "npm:react-dom@^0.14.0",
       "twbs/bootstrap-sass": "github:twbs/bootstrap-sass@^3.3.5"
     },
     "devDependencies": {
