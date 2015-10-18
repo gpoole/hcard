@@ -15,10 +15,10 @@ export class Builder extends React.Component {
 
 	render() {
 		return <div className="row">
-				<div className="col-md-6">
+				<div className="col-md-6 app-editor">
 					<Editor onChanged={this.handleChanged.bind(this)} />
 				</div>
-				<div className="col-md-6">
+				<div className="col-md-6 app-preview">
 					<h2 className="card-preview-title">hCard Preview</h2>
 					<Card {...this.state} />
 				</div>

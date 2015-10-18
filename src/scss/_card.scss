@@ -1,8 +1,8 @@
-$card-padding: 20px;
+$card-padding: 25px;
 $card-label-width: 80px;
 
 .card {
-	background-color: white;	
+	background-color: white;
 }
 
 .card-headline {
@@ -29,23 +29,36 @@ $card-label-width: 80px;
 
 .card-body {
 	padding: $card-padding;
+	@include clearfix;
 }
 
 .card-line {
-	@include clearfix;
+	border-bottom: 1px solid $gray-light;
+	display: block;
+	margin-top: 15px;
+	min-height: $line-height-computed;
 
 	.card-label {
-		float: left;
 		text-transform: uppercase;
 		width: $card-label-width;
+		font-size: $font-size-small;
+		display: inline-block;
 	}
 
 	.card-field {
-		display: block;
-		margin-left: $card-label-width;
+		font-family: $font-family-serif;
 	}
 
-	&.short-field {
-		
+	&.no-label {
+		.card-field {
+			margin-left: $card-label-width;
+		}
+	}
+
+	@media (min-width: $screen-md-min) {
+		&.short-field {
+			width: 50%;
+			float: left;
+		}
 	}
 }

@@ -7,15 +7,25 @@
 @import "form";
 @import "card";
 
-.hc-app {
-	&:before {
-		content: " ";
-		position: absolute;
-		left: 50%;
-		top: 0;
-		width: 50%;
-		height: 100%;
-		background-color: $gray-lighter;
+.card {
+	border: 1px solid $gray-lighter;
+}
+
+@media (min-width: $screen-md-min) {
+	.hc-app {
+		&:before {
+			content: " ";
+			position: absolute;
+			left: 50%;
+			top: 0;
+			width: 50%;
+			height: 100%;
+			background-color: $gray-lighter;
+		}
+	}
+
+	.card {
+		border: none;
 	}
 }
 
@@ -24,4 +34,8 @@
 	color: $gray-light;
 	font-size: $font-size-large;
 	font-weight: normal;
+}
+
+@media(min-width: $screen-md-min) {
+	text-align: right;
 }

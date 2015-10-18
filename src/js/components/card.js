@@ -22,7 +22,7 @@ export class Card extends React.Component {
 						<span className="card-label">Address</span>
 						<span className="card-field street-address">{this.props.house} {this.props.street}</span>
 					</span>
-					<span className="card-line">
+					<span className="card-line no-label">
 						<span className="card-field">
 							<span className="locality">{this.props.suburb}</span>{this.props.suburb && this.props.state ? ', ' : ''}
 							<span className="region">{this.props.state}</span>
