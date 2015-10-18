@@ -49,6 +49,17 @@ module.exports = function (grunt) {
 					livereload: true
 				}
 			}
+		},
+		systemjs: {
+			dist: {
+				options: {
+					configFile: 'config.js',
+					baseURL: './'
+				},
+				files: {
+					'./dist/js/app.js': [ './dist/js/app.js' ]
+				}
+			}
 		}
 	});
 
@@ -57,12 +68,14 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-connect');
+	grunt.loadNpmTasks("grunt-systemjs-builder");
 
 	// Default task(s).
 	grunt.registerTask('default', [
 		'sass',
 		'copy',
 		'babel',
+		'systemjs'
 	]);
 
 	grunt.registerTask('serve', [
